@@ -1,10 +1,12 @@
 import java.awt.Color;
 import java.awt.Point;
+import java.io.IOException;
 
 import javax.swing.JFrame;
 
 public class DrawFrame extends JFrame{
 	
+	private DrawPanel shapePanel;
 	private Diamond d = new Diamond(new Point(150, 50), 50, Color.GREEN, true);
 	private Rectangle r = new Square (new Point(400, 400), 50, Color.ORANGE, true);
 	private Triangle rt = new RightTriangle(new Point (200, 200), 50, 75, Color.BLUE, true);
@@ -15,14 +17,12 @@ public class DrawFrame extends JFrame{
 	
 	
 	
-	public DrawFrame() 
+	public DrawFrame(String title) throws IOException 
 	{
-		DrawPanel shapePanel = new DrawPanel();
-		this.setSize(500, 500);
-		this.setVisible(true);
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.add(shapePanel);
-		this.pack();
+		super(title);
+		
+		shapePanel = new DrawPanel();
+		
 		shapePanel.addShape(d);
 		shapePanel.addShape(r);
 		shapePanel.addShape(rt);
@@ -30,11 +30,21 @@ public class DrawFrame extends JFrame{
 		shapePanel.addShape(pl);
 		shapePanel.addShape(c);
 		shapePanel.addShape(o);
+		
+		this.setSize(500, 500);
+		this.setVisible(true);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.add(shapePanel);
+		this.pack();
+		
+		
+		PanelToImage.makePanelImage(shapePanel, "image", "png");
+		
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
+		new DrawFrame("Images of Shapes");
 		
-		new DrawFrame();
 				
 		
 	}
