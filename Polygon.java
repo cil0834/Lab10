@@ -25,7 +25,9 @@ public class Polygon extends Shape{
 		
 		g.drawPolygon(x, y, location.length);
 		if(this.isFilled()) {
+		g.setColor(this.getColor()); 
 		g.fillPolygon(x, y, location.length);
+		
 		}
 		
 		

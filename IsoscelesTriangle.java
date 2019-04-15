@@ -9,9 +9,9 @@ public class IsoscelesTriangle extends Triangle {
 		//the point on the base not apart of the right angle
 		location[0] = pointLB;
 		//the point at the right angle
-		location[1] = new Point ((int)(pointLB.getX() + base), (int)(pointLB.getY()));
+		location[1] = new Point (pointLB.x+ base, pointLB.y);
 		//the point above the right angle
-		location[2] = new Point((int)(pointLB.getX() + base), (int)(pointLB.getY() + height));
+		location[2] = new Point(pointLB.x + base/2, (pointLB.y - height));
 	}
 
 }

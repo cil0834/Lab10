@@ -7,12 +7,13 @@ public class Rectangle extends Polygon{
 	{
 		super(color, filled);
 		//upper left corner
+		location = new Point[4];
 		location[0] = pointUL;
 		//upper right corner
-		location[1] = new Point ((int) (pointUL.getX() + width), (int) (pointUL.getY()));
-		//lower left corner
-		location[2] = new Point ((int) (pointUL.getX()), (int) (pointUL.getY() + height));
+		location[1] = new Point (pointUL.x + width, pointUL.x);
 		//lower right corner
-		location[3] = new Point ((int) (pointUL.getX() + width), (int) (pointUL.getY() + height));
+		location[2] = new Point (pointUL.x + width, pointUL.y + height);
+		 //lower left corner
+		location[3] = new Point (pointUL.x, pointUL.y + height);
 	}
 }

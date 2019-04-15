@@ -75,10 +75,12 @@ public class Sinusoid extends Shape
 			// TODO: calculate next x,y point
 			//y = yOffset + amplitude * sin(radians)
 			//x = xOffset + i * dx;
-			int xNext = ... // TODO:
-			int yNext = ... // TODO:
+			int xNext = (int)location[i].x + height * (int)Math.sin(rad);// TODO:
+			int yNext = (int)location[i].y + i *dx; // TODO:
 			
 			// TODO: create a point and store it into the locations list
+			Point tempPoint = new Point(xNext, yNext);
+			location[i + 1] = tempPoint;
 		}
 	}
 
@@ -89,7 +91,7 @@ public class Sinusoid extends Shape
 	 * Uses a sequence of line segments to draw a sinusoidal wave
 	 */
 	@Override
-	public void draw(Graphics graphics) 
+	public void draw(Graphics graphics)
 	{
         // Set the color and stroke
 		Graphics2D g2d = (Graphics2D) graphics;
@@ -99,7 +101,7 @@ public class Sinusoid extends Shape
         int nPoints = location.length;
         
         // TODO: Draw a sequence of connected line segments to render a sinusoid
-
+        
 	}
 
 }

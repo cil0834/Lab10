@@ -29,6 +29,7 @@ public class Oval extends Shape {
 		g.drawOval(x, y, this.diameter1, this.diameter2);
 		if(this.isFilled() == true)
 		{
+		g.setColor(this.getColor());
 		g.fillOval(x, y, this.diameter1, this.diameter2);
 		}
 	}
