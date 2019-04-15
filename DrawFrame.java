@@ -31,14 +31,13 @@ public class DrawFrame extends JFrame{
 		shapePanel.addShape(c);
 		shapePanel.addShape(o);
 		
+		this.add(shapePanel);
 		this.setSize(500, 500);
 		this.setVisible(true);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.add(shapePanel);
-		this.pack();
 		
 		
-		PanelToImage.makePanelImage(shapePanel, "image", "png");
+		PanelToImage.makePanelPNGImage(shapePanel, "image");
 		
 	}
 	
