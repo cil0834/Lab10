@@ -1,2 +1,2 @@
 # Lab10
-![](image)
+![myimage](image.png)

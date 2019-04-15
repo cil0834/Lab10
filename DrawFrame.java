@@ -37,7 +37,7 @@ public class DrawFrame extends JFrame{
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		
-		PanelToImage.makePanelPNGImage(shapePanel, "image");
+		PanelToImage.makePanelPNGImage(shapePanel, "src/image");
 		
 	}
 	
