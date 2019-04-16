@@ -10,7 +10,7 @@ public class Rectangle extends Polygon{
 		location = new Point[4];
 		location[0] = pointUL;
 		//upper right corner
-		location[1] = new Point (pointUL.x + width, pointUL.x);
+		location[1] = new Point (pointUL.x + width, pointUL.y);
 		//lower right corner
 		location[2] = new Point (pointUL.x + width, pointUL.y + height);
 		 //lower left corner
