@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>PolyLine.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">TestRunner (2) (Apr 16, 2019 4:43:01 PM)</a> &gt; <a href="../../index.html" class="el_group">Lab10</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">PolyLine.java</span></div><h1>PolyLine.java</h1><pre class="source lang-java linenums">import java.awt.Color;
+import java.awt.Point;
+
+public class PolyLine extends Polygon{
+
+	public PolyLine(Point pointUL, Point pointUR, int thickness, Color color, boolean filled)
+	{
+<span class="fc" id="L8">		super(color, filled);</span>
+<span class="fc" id="L9">		location = new Point[4];</span>
+		//upper left
+<span class="fc" id="L11">		location[0] = pointUL;</span>
+		//upper right
+<span class="fc" id="L13">		location[1] = pointUR;</span>
+		//lower right lr.y = ur.y + thickness
+<span class="fc" id="L15">		location[2] = new Point ((int)pointUR.x, (int)pointUR.y + thickness);</span>
+		//lower left  ll.y = ul.y + thickness.
+<span class="fc" id="L17">		location[3] = new Point((int)pointUL.x, (int)pointUL.y + thickness);</span>
+<span class="fc" id="L18">	}</span>
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span>TestRunner (2) (Apr 16, 2019 4:43:01 PM)</div></body></html>

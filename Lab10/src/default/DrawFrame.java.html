@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>DrawFrame.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">TestRunner (2) (Apr 16, 2019 4:43:01 PM)</a> &gt; <a href="../../index.html" class="el_group">Lab10</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">DrawFrame.java</span></div><h1>DrawFrame.java</h1><pre class="source lang-java linenums">import java.awt.Color;
+import java.awt.Point;
+import java.io.IOException;
+
+import javax.swing.JFrame;
+
+public class DrawFrame extends JFrame{
+	//six circles
+	//seven triangles
+	//four diamonds
+	//two rectangles
+	//one sinusoid
+	private DrawPanel shapePanel;
+<span class="nc" id="L14">	private Diamond d1 = new Diamond(new Point(150, 50), 50, Color.GREEN, true);</span>
+<span class="nc" id="L15">	private Diamond d2 = new Diamond(new Point (700, 900), 100, Color.CYAN, true);</span>
+<span class="nc" id="L16">	private Diamond d3 = new Diamond(new Point(600, 600), 100, Color.DARK_GRAY, true);</span>
+<span class="nc" id="L17">	private Diamond d4 = new Diamond(new Point(200, 500), 40, Color.BLACK, false);</span>
+<span class="nc" id="L18">	private Rectangle r1 = new Square(new Point(400, 400), 50, Color.ORANGE, true);</span>
+<span class="nc" id="L19">	private Rectangle r2 = new Square(new Point (700, 100), 50, Color.RED, true);</span>
+<span class="nc" id="L20">	private Triangle t1 = new RightTriangle(new Point (200, 200), 50, 75, Color.BLUE, true);</span>
+<span class="nc" id="L21">	private Triangle t2 = new IsoscelesTriangle(new Point (300, 300), 50, 75, Color.BLACK, true);</span>
+<span class="nc" id="L22">	private Triangle t3 = new RightTriangle(new Point (400, 400), 100, 60, Color.GREEN, true);</span>
+<span class="nc" id="L23">	private Triangle t4 = new IsoscelesTriangle(new Point (250, 250), 25, 25, Color.ORANGE, true);</span>
+<span class="nc" id="L24">	private Triangle t5 = new IsoscelesTriangle(new Point (800, 800), 70, 70, Color.GRAY, true);</span>
+<span class="nc" id="L25">	private Triangle t6 = new RightTriangle (new Point (900, 900), 50, 50, Color.LIGHT_GRAY, true);</span>
+<span class="nc" id="L26">	private Triangle t7 = new RightTriangle(new Point (750, 750), 60, 60, Color.YELLOW, true);</span>
+<span class="nc" id="L27">	private PolyLine pl = new PolyLine(new Point (500, 300), new Point (600, 250), 10, Color.CYAN, true);</span>
+<span class="nc" id="L28">	private Circle c1 = new Circle(new Point(359, 350), 20, Color.DARK_GRAY, true);</span>
+<span class="nc" id="L29">	private Oval c2 = new Oval(new Point (100, 100), 20, 40, Color.PINK, true);</span>
+<span class="nc" id="L30">	private Circle c3 = new Circle(new Point (500, 100), 50, Color.BLUE, true);</span>
+<span class="nc" id="L31">	private Oval c4 = new Oval(new Point (750, 500), 50, 75, Color.GREEN, true);</span>
+<span class="nc" id="L32">	private Oval c5 = new Oval(new Point (200, 800), 100, 50, Color.GRAY, true);</span>
+<span class="nc" id="L33">	private Circle c6 = new Circle(new Point (600, 100), 50, Color.CYAN, true);</span>
+<span class="nc" id="L34">	private  Sinusoid s0 = new Sinusoid(Color.MAGENTA, new Point(400, 400), 2, 1, 20);</span>
+	
+	
+	public DrawFrame(String title) throws IOException 
+	{
+<span class="nc" id="L39">		super(title);</span>
+		
+<span class="nc" id="L41">		shapePanel = new DrawPanel();</span>
+		
+<span class="nc" id="L43">		shapePanel.addShape(d1);</span>
+<span class="nc" id="L44">		shapePanel.addShape(d2);</span>
+<span class="nc" id="L45">		shapePanel.addShape(d3);</span>
+<span class="nc" id="L46">		shapePanel.addShape(d4);</span>
+<span class="nc" id="L47">		shapePanel.addShape(r1);</span>
+<span class="nc" id="L48">		shapePanel.addShape(r2);</span>
+<span class="nc" id="L49">		shapePanel.addShape(t1);</span>
+<span class="nc" id="L50">		shapePanel.addShape(t2);</span>
+<span class="nc" id="L51">		shapePanel.addShape(t3);</span>
+<span class="nc" id="L52">		shapePanel.addShape(t4);</span>
+<span class="nc" id="L53">		shapePanel.addShape(t5);</span>
+<span class="nc" id="L54">		shapePanel.addShape(t6);</span>
+<span class="nc" id="L55">		shapePanel.addShape(t7);</span>
+<span class="nc" id="L56">		shapePanel.addShape(pl);</span>
+<span class="nc" id="L57">		shapePanel.addShape(c1);</span>
+<span class="nc" id="L58">		shapePanel.addShape(c2);</span>
+<span class="nc" id="L59">		shapePanel.addShape(c3);</span>
+<span class="nc" id="L60">		shapePanel.addShape(c4);</span>
+<span class="nc" id="L61">		shapePanel.addShape(c5);</span>
+<span class="nc" id="L62">		shapePanel.addShape(c6);</span>
+<span class="nc" id="L63">		shapePanel.addShape(s0);</span>
+		
+<span class="nc" id="L65">		this.add(shapePanel);</span>
+<span class="nc" id="L66">		this.setSize(1000, 1000);</span>
+<span class="nc" id="L67">		this.setVisible(true);</span>
+<span class="nc" id="L68">		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span>
+		
+		
+<span class="nc" id="L71">		PanelToImage.makePanelPNGImage(shapePanel, &quot;src/image&quot;);</span>
+		
+<span class="nc" id="L73">	}</span>
+	
+	public static void main(String[] args) throws IOException {
+<span class="nc" id="L76">		new DrawFrame(&quot;Images of Shapes&quot;);</span>
+		
+				
+		
+<span class="nc" id="L80">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span>TestRunner (2) (Apr 16, 2019 4:43:01 PM)</div></body></html>
