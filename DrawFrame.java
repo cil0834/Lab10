@@ -14,7 +14,7 @@ public class DrawFrame extends JFrame{
 	private PolyLine pl = new PolyLine(new Point (500, 300), new Point (600, 250), 10, Color.CYAN, true);
 	private Circle c = new Circle(new Point(359, 350), 20, Color.DARK_GRAY, true);
 	private Oval o = new Oval(new Point (100, 100), 20, 40, Color.PINK, true);
-	
+	private  Sinusoid s0 = new Sinusoid(Color.MAGENTA, new Point(400, 400), 2, 1, 20);
 	
 	
 	public DrawFrame(String title) throws IOException 
@@ -30,9 +30,10 @@ public class DrawFrame extends JFrame{
 		shapePanel.addShape(pl);
 		shapePanel.addShape(c);
 		shapePanel.addShape(o);
+		shapePanel.addShape(s0);
 		
 		this.add(shapePanel);
-		this.setSize(500, 500);
+		this.setSize(1000, 1000);
 		this.setVisible(true);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
